@@ -16,6 +16,30 @@ $ docker image tag rental gcr.io/cnaps-project/rental
 $ docker push gcr.io/cnaps-project/rental
 ```
 
+```
+$ cd gateway
+$ ./mvnw package -Pprod -DskipTests jib:dockerBuild -Dimage=192.168.1.10:8443/gateway:latest
+$ cd book
+$ ./mvnw package -Pprod -DskipTests jib:dockerBuild -Dimage=192.168.1.10:8443/book:latest
+$ cd bookCatalog
+$ ./mvnw package -Pprod -DskipTests jib:dockerBuild -Dimage=192.168.1.10:8443/bookcatalog:latest
+$ cd rental
+$ ./mvnw package -Pprod -DskipTests jib:dockerBuild -Dimage=192.168.1.10:8443/rental:latest
+$ cd board
+$ ./mvnw package -Pprod -DskipTests jib:dockerBuild -Dimage=192.168.1.10:8443/board:latest
+
+docker images 192.168.1.10:8443/book
+docker push 192.168.1.10:8443/book
+
+docker images 192.168.1.10:8443/bookcatalog
+docker push 192.168.1.10:8443/bookcatalog
+
+docker images 192.168.1.10:8443/rental
+docker push 192.168.1.10:8443/rental
+
+docker images 192.168.1.10:8443/gateway
+docker push 192.168.1.10:8443/gateway
+```
 ## Deployment
 
 쿠버네티스용 Continuous Deployment 툴인 Skaffold
