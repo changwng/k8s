@@ -1,6 +1,7 @@
 # JHipster-generated Kubernetes configuration
 
 ## Preparation
+## my Jang Woong for docker registry
 
 You will need to push your image to a registry. If you have not done so, use the following commands to tag and push the images:
 
@@ -17,6 +18,8 @@ $ docker push gcr.io/cnaps-project/rental
 
 ## Deployment
 
+쿠버네티스용 Continuous Deployment 툴인 Skaffold
+ 
 You can deploy all your apps by running the below bash command:
 
 ```
