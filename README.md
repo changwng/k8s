@@ -39,6 +39,10 @@ docker push 192.168.1.10:8443/rental
 
 docker images 192.168.1.10:8443/gateway
 docker push 192.168.1.10:8443/gateway
+
+
+cd book
+sed -i 's/"image: gcr.io/cnaps-project"/"image: 192.168.1.10:8443/book"/' book-deployment.yml
 ```
 ## Deployment
 
